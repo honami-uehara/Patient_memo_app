@@ -13,3 +13,84 @@
  *= require_tree .
  *= require_self
  */
+ html {
+  font: 100%/1.5 "Avenir Next", "Hiragino Sans", sans-serif;
+  line-height: 1.7;
+  letter-spacing: 1px;
+}
+ body {
+  background: #DCDDDF;
+}
+
+.login_view {
+  background-color: #FFFFFF;
+  text-align: center;
+  margin: 3em auto;
+  padding: 10%;
+  max-width: 370px;
+}
+
+form {
+  padding: 0 1.5em;
+}
+
+.login-pass {
+  background: #fafafa;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  font-size: 15px;
+  height: 40px;
+  width: 100%;
+}
+
+ul, li {
+  list-style: none;
+  line-height: 50px;
+}
+
+.login-submit {
+  margin: 2em auto;
+}
+
+.submit-login {
+  background-color: #e57a7c;
+  color: #DCDDDF;
+  padding: 5px 30px;
+  cursor: pointer;
+  border: none;
+}
+
+.submit-login:hover {
+  background-color: #db5f51;
+}
+
+.new_acount_make {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
+  }
+
+.title {
+  color: #e57a7c;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 10px 0 30px 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.new_pass {
+  background: #fafafa;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  font-size: 15px;
+  height: 40px;
+  width: 100%;
+  letter-spacing: 5px;
+}
+
+.login-acount {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}

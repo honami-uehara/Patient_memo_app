@@ -1,0 +1,31 @@
+<div class = "login_view">
+  <h2 class="title">新規登録</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="register">
+      <%= f.text_field :username, autofocus: true, autocomplete: "ユーザー名",placeholder:"アカウント名",class:"new_pass" %>
+    </div>
+
+    <div class="register">
+      <%= f.email_field :email, autofocus: true, autocomplete: "メールアドレス",placeholder:"メールアドレス",class:"new_pass" %>
+    </div>
+
+    <div class="register">
+      <%= f.password_field :password, autocomplete: "パスワード",placeholder:"パスワード",class:"new_pass" %>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="register">
+      <%= f.password_field :password_confirmation, autocomplete: "確認用パスワード",placeholder:"確認用パスワード",class:"new_pass" %>
+    </div>
+
+    <ul class="login-submit">
+      <li><%= f.submit "新しいアカウントを作成",class:"submit-login" %></li>
+      <li><%= link_to "アカウントお持ちの方はログイン", new_user_session_path, class:"login-acount" %></li>
+    </ul>
+  <% end %>
+</div>
