@@ -13,16 +13,12 @@
  *= require_tree .
  *= require_self
  */
- html {
-  font: 100%/1.5 "Avenir Next", "Hiragino Sans", sans-serif;
-  line-height: 1.7;
-  letter-spacing: 1px;
-}
  body {
   background: #DCDDDF;
 }
 
-.login_view {
+.login_view,
+.account_view {
   background-color: #FFFFFF;
   text-align: center;
   margin: 3em auto;
@@ -35,6 +31,7 @@ form {
 }
 
 .login-pass {
+  letter-spacing: 3px;
   background: #fafafa;
   border: none;
   border-bottom: 2px solid #e9e9e9;
@@ -48,11 +45,13 @@ ul, li {
   line-height: 50px;
 }
 
-.login-submit {
+.login-submit,
+.edit_link {
   margin: 2em auto;
 }
 
-.submit-login {
+.submit-login,
+.submit_register_edit {
   background-color: #e57a7c;
   color: #DCDDDF;
   padding: 5px 30px;
@@ -64,7 +63,8 @@ ul, li {
   background-color: #db5f51;
 }
 
-.new_acount_make {
+.new_account_make,
+.edit_account {
   color: #8c8c8c;
   text-decoration: none;
   transition: border-color 0.3s;
@@ -79,7 +79,8 @@ ul, li {
   padding-bottom: 15px;
 }
 
-.new_pass {
+.new_pass,
+.edit_pass {
   background: #fafafa;
   border: none;
   border-bottom: 2px solid #e9e9e9;
@@ -89,8 +90,30 @@ ul, li {
   letter-spacing: 5px;
 }
 
-.login-acount {
+.login-account,
+.edit_submit {
+  font-size: 10px;
+  padding: 10px;
+}
+
+.edit-register {
   color: #8c8c8c;
+}
+
+.submit_home,
+.delete_account {
+  background-color: #e57a7c;
+  color: #DCDDDF;
+  padding: 5px 30px;
+  cursor: pointer;
+  border: none;
   text-decoration: none;
-  transition: border-color 0.3s;
+}
+
+th {
+  color: #808080;
+}
+
+td {
+ color: #444444;
 }
