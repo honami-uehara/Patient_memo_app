@@ -34,6 +34,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'mailcatcher'
 end
 
 group :development do
