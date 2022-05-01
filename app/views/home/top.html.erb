@@ -1,9 +1,12 @@
 <h1>Home#top</h1>
 <p>Find me in app/views/home/top.html.erb</p>
+<% if user_signed_in? %>
+<li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nonline" %></li>
+<li><%= link_to "編集" , edit_user_path(@user.id) , class:"edit_account" %></li>
+<% else %>
 <li><%= link_to "ログイン", "/users/sign_in", class:"nonline login"  %></li>
-          <li><%= link_to "新規登録", "/users/sign_up", class:"nonline new" %></li>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nonline" %></li>
-          <%= link_to "編集" , edit_user_registration_path(@user) , class:"edit_account" %>
-   </div>
-</div>
+<li><%= link_to "新規登録", "/users/sign_up", class:"nonline new" %></li>
+<% end %>
+
+
 
