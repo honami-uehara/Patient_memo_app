@@ -1,3 +1,61 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.about-main {
+  font-family: 'Amatic SC', cursive;
+}
+.about-title {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 26px;
+	text-align: center;
+}
+
+.about-title::before,
+.about-title::after {
+	content: '';
+	width: 70px;
+	height: 3px;
+	background-color: #FF1493;
+}
+
+.about-title::before {
+	margin-right: 20px;
+}
+
+.about-title::after {
+	margin-left: 20px;
+}
+
+.purpose,
+.recommendation {
+  text-align: center;
+}
+
+.none {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 26px;
+	text-align: center;
+}
+
+.none::before,
+.none::after {
+	content: '';
+	width: 70px;
+	height: 3px;
+	background-color: #FF1493;
+}
+
+
+.none::before {
+	margin-right: 20px;
+}
+
+
+.none::after {
+	margin-left: 20px;
+}
