@@ -1,0 +1,31 @@
+<div class="account_view">
+  <h2 class="title">アカウント編集</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { novalidate: "novalidate" }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+   <div class="edit-register">
+      <%= f.label :username, "アカウント名" %><br>
+      <%= f.email_field :username, autofocus: true, autocomplete: "account",placeholder:"account",class:"edit_pass" %>
+    </div>
+
+    <div class="edit-register">
+      <%= f.label :email, "メールアドレス" %><br>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"email",class:"edit_pass" %>
+    </div>
+
+    <div class="edit-register">
+      <%= f.label :password, "新規パスワード" %><br>
+      <%= f.password_field :password, autocomplete: "新規パスワード",placeholder:"パスワード" ,class:"edit_pass" %>
+    </div>
+
+    <div class="edit-register">
+      <%= f.label :password_confirmation, "確認用パスワード" %>
+      <%= f.password_field :password_confirmation, autocomplete: "確認用パスワード",placeholder:"確認用パスワード" ,class:"edit_pass" %>
+    </div>
+
+    <ul class="edit_submit">
+      <li><%= f.submit "更新", class:"submit_register_edit" %></li>
+      <li><%= button_to "このアカウントを削除", registration_path(resource_name), data: { confirm: "このアカウントを削除しますか?" }, method: :delete, class:"delete_account" %></li>
+      <li><%= link_to "ホームへ戻る", root_path, class:"submit_home" %></li>
+    </ul>
+  <% end %>
+</div>
