@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       flash[:notice] = "#{@user.username}の情報を更新しました"
       redirect_to  root_path(@user)
     else
-      render "edit"
+       render :edit
     end
   end
 end
