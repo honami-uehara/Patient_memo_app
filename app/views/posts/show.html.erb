@@ -1,0 +1,43 @@
+<div class="account_view">
+  <h2 class="title">スケジュール詳細</h2>
+
+  <table>
+    <tbody>
+      <tr>
+        <th>カルテ番号</th>
+        <td><%= @post.medical_record_number %></td>
+      </tr>
+
+      <tr>
+        <th>名前</th>
+        <td><%= @post.name %></td>
+      </tr>
+
+      <tr>
+        <th>電話番号</th>
+        <td><%= @post.phone_number %></td>
+      </tr>
+
+      <tr>
+        <th>注意すること</th>
+        <td><%= @post.warn %></td>
+      </tr>
+
+      <tr>
+        <th>治療内容</th>
+        <td><%= @post.maintenance_or_treatment %></td>
+      </tr>
+
+      <tr>
+        <th>来院日</th>
+        <td><%= @post.visit_date %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul class="edit_submit">
+    <li><%= link_to"患者登録一覧に戻る", :posts %></li>
+    <li><%= link_to "編集する", edit_post_path(@post.id) %></li>
+    <li><%= link_to "削除する", @post, method: :delete, data: { confirm: "本当に削除しますか？" } %></li>
+  </ul>
+</div>
