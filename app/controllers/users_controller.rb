@@ -17,5 +17,12 @@ class UsersController < ApplicationController
     else
        render :edit
     end
+
+    def bookmarks
+      @user = current_user
+      @bookmark_lists = Bookmark.where(user_id: @user.id).pluck(:post_id)
+      # @bookmark_lists = Post.find(bookmarks)
+
+    end
   end
 end

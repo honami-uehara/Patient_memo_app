@@ -1,0 +1,4 @@
+<h3>いいねしている投稿</h3>
+  <% @bookmark_lists.each do |post| %>
+    <%= post.user.name %>
+  <% end %>
