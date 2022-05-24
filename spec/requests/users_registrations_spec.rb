@@ -8,7 +8,7 @@ RSpec.describe 'Users::Registrations', type: :request do
     @user = FactoryBot.create(:user)
   end
 
-  describe 'GET /users/sign_in' do
+  describe 'GET /users/sign_up' do
     it 'responds successfully' do
       get new_user_registration_path
       expect(response).to have_http_status 200
