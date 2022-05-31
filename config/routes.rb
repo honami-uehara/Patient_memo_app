@@ -10,10 +10,17 @@ Rails.application.routes.draw do
     get 'users/destroy', to: 'users/sessions#destroy'
   end
 
-  resources :users, only: [:show, :edit, :update]
   get 'home/about'
 
-  resources :posts
+  resources :users, only: [:show, :edit, :update] do
+    member do
+      get :bookmarks
+    end
+  end
+
+  resources :posts do
+    resource :bookmarks, only: [:create, :destroy]
+  end
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

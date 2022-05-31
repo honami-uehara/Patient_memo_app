@@ -1,5 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :bookmarks, dependent: :destroy
+  has_many :bookmarkd_users, through: :bookmarks, source: :user
 
   with_options presence: true do
     validates :name, length: {maximum: 10}

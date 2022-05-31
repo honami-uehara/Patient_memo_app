@@ -33,7 +33,8 @@ RSpec.describe User, type: :model do
     end
 
     it 'パスワードと確認が一致していない' do
-      user.password, password_confirmation = ''
+      user.password = "test1111"
+      user.password_confirmation = "test2222"
       expect(user.valid?).to eq(false)
     end
 

@@ -1,5 +1,5 @@
 <div class="account_view">
-  <h2 class="title">スケジュール詳細</h2>
+  <h2 class="title">患者情報詳細</h2>
 
   <table>
     <tbody>
@@ -32,6 +32,13 @@
         <th>来院日</th>
         <td><%= @post.visit_date %></td>
       </tr>
+
+      <h3>要注意患者 <%= @post.bookmarks.count %></h3>
+      <% if current_user. already_bookmarkd?(@post) %>
+        <%= button_to '取り消す', post_bookmarks_path(@post), method: :delete %>
+      <% else %>
+        <%= button_to 'ブックマーク',   post_bookmarks_path(@post) %>
+      <% end %>
     </tbody>
   </table>
 

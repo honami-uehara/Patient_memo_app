@@ -1,0 +1,27 @@
+<h3>ブックマーク一覧</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>カルテ番号</th>
+        <th>名前</th>
+        <th>電話番号</th>
+        <th>注意すること</th>
+        <th>治療内容</th>
+        <th>来院日</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @bookmark_lists.each do |post| %>
+        <tr>
+          <td><%= post.medical_record_number %></td>
+          <td><%= post.name %></td>
+          <td><%= post.warn %></td>
+          <td><%= post.phone_number %></td>
+          <td><%= post.maintenance_or_treatment %></td>
+          <td><%= post.visit_date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
