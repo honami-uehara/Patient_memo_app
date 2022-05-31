@@ -35,9 +35,9 @@
 
       <h3>要注意患者 <%= @post.bookmarks.count %></h3>
       <% if current_user. already_bookmarkd?(@post) %>
-        <%= button_to '取り消す', post_bookmark_path(@post), method: :delete %>
+        <%= button_to '取り消す', post_bookmarks_path(@post), method: :delete %>
       <% else %>
-        <%= button_to 'ブックマーク',  post_bookmarks_path(@post) %>
+        <%= button_to 'ブックマーク',   post_bookmarks_path(@post) %>
       <% end %>
     </tbody>
   </table>

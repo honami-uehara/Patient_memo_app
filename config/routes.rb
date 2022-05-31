@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts do
-    resources :bookmarks, only: [:create, :destroy]
+    resource :bookmarks, only: [:create, :destroy]
   end
 
 
