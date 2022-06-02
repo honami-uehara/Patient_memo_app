@@ -13,14 +13,14 @@
     </thead>
 
     <tbody>
-      <% @bookmark_lists.each do |post| %>
+      <% @bookmark_lists.each do |patient_registration| %>
         <tr>
-          <td><%= post.medical_record_number %></td>
-          <td><%= post.name %></td>
-          <td><%= post.warn %></td>
-          <td><%= post.phone_number %></td>
-          <td><%= post.maintenance_or_treatment %></td>
-          <td><%= post.visit_date %></td>
+          <td><%= patient_registration.medical_record_number %></td>
+          <td><%= patient_registration.name %></td>
+          <td><%= patient_registration.warn %></td>
+          <td><%= patient_registration.phone_number %></td>
+          <td><%= patient_registration.maintenance_or_treatment %></td>
+          <td><%= patient_registration.visit_date %></td>
         </tr>
       <% end %>
     </tbody>

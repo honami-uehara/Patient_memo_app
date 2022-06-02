@@ -1,0 +1,50 @@
+<div class="account_view">
+  <h2 class="title">患者情報詳細</h2>
+
+  <table>
+    <tbody>
+      <tr>
+        <th>カルテ番号</th>
+        <td><%= @patient_registration.medical_record_number %></td>
+      </tr>
+
+      <tr>
+        <th>名前</th>
+        <td><%= @patient_registration.name %></td>
+      </tr>
+
+      <tr>
+        <th>電話番号</th>
+        <td><%= @patient_registration.phone_number %></td>
+      </tr>
+
+      <tr>
+        <th>注意すること</th>
+        <td><%= @patient_registration.warn %></td>
+      </tr>
+
+      <tr>
+        <th>治療内容</th>
+        <td><%= @patient_registration.maintenance_or_treatment %></td>
+      </tr>
+
+      <tr>
+        <th>来院日</th>
+        <td><%= @patient_registration.visit_date %></td>
+      </tr>
+
+      <h3>要注意患者 <%= @patient_registration.bookmarks.count %></h3>
+      <% if current_user. already_bookmarkd?(@patient_registration) %>
+        <%= button_to '取り消す', patient_registration_bookmarks_path(@patient_registration), method: :delete %>
+      <% else %>
+        <%= button_to 'ブックマーク',   patient_registration_bookmarks_path(@patient_registration) %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <ul class="edit_submit">
+    <li><%= link_to"患者登録一覧に戻る", :patient_registrations %></li>
+    <li><%= link_to "編集する", edit_patient_registration_path(@patient_registration.id) %></li>
+    <li><%= link_to "削除する", @patient_registration, method: :delete, data: { confirm: "本当に削除しますか？" } %></li>
+  </ul>
+</div>

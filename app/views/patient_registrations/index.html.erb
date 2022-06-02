@@ -1,0 +1,32 @@
+<h3>登録者一覧</h3>
+<table>
+  <thead>
+    <tr>
+      <th>カルテ番号</th>
+      <th>名前</th>
+      <th>電話番号</th>
+      <th>注意すること</th>
+      <th>治療内容</th>
+      <th>来院日</th>
+      <th>詳細</th>
+      <th>編集</th>
+      <th>削除</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patient_registrations.each do |patient_registration| %>
+      <tr>
+        <td><%= patient_registration.medical_record_number %></td>
+        <td><%= patient_registration.name %></td>
+        <td><%= patient_registration.phone_number %></td>
+        <td><%= patient_registration.warn %></td>
+        <td><%= patient_registration.maintenance_or_treatment %></td>
+        <td><%= patient_registration.visit_date %></td>
+        <td><%= link_to "詳細", patient_registration %></td>
+        <td><%= link_to "編集", edit_patient_registration_path(patient_registration.id) %></td>
+        <td><%= link_to "削除", patient_registration, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

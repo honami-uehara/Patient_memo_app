@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_16_103714) do
+ActiveRecord::Schema.define(version: 2022_06_01_141942) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "post_id", null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2022_05_16_103714) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "patient_registrations", force: :cascade do |t|
     t.string "name"
     t.text "warn"
     t.string "phone_number"
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 2022_05_16_103714) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookmarks", "posts"
+  add_foreign_key "bookmarks", "patient_registrations", column: "post_id"
   add_foreign_key "bookmarks", "users"
-  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "patient_registrations", column: "post_id"
   add_foreign_key "likes", "users"
 end

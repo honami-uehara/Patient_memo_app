@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def bookmarks
     @user = current_user
-    bookmarks = Bookmark.where(user_id: @user.id).pluck(:post_id)
-    @bookmark_lists = Post.find(bookmarks)
+    bookmarks = Bookmark.where(user_id: @user.id).pluck(:patient_registration_id)
+    @bookmark_lists = PatientRegistration.find(bookmarks)
   end
 end
