@@ -118,33 +118,29 @@ RSpec.describe "PatientRegistrations", type: :request do
       end
     end
 
-    context 'パラメーターが異常な場合' do
-      let(:invalid_params) { { patient_registration: attributes_for(:patient_registration) } }
+#      context 'パラメーターが異常な場合' do
+#        let(:invalid_params) { { patient_registration: attributes_for(:patient_registration) } }
+#        let(:invalid_params) { { patient_registration: attributes_for(:patient_registration, :invalid) } }
 
-      it 'リクエストが成功する' do
-        post patient_registrations_path, params: invalid_params
-        expect(response.status).to eq 200
-      end
+#        it 'データーベースが保存されない' do
+#           expect do
+#            post patient_registrations_path(invalid_params)
+#           end.not_to change{ PatientRegistration.count }
+#        end
+#      end
+#    end
 
-      it 'データーベースが保存されない' do
-        expect do
-          post patient_registrations_path(invalid_params)
-        end.not_to change{ PatientRegistration.count }
-      end
-    end
-  end
-
-  describe 'POST/destory' do
-    before do
-      sign_in user
-    end
-   let(:patient_registration) { create(:patient_registration, user_id: user.id) }
-
-    it '削除されること' do
-      expect do
-        delete patient_registrations_path(patient_registration.id)
-      end.to change{ PatientRegistration.count }.by(-1)
-    end
+#    describe 'POST/destory' do
+#      before do
+#        sign_in user
+#      end
+#     let(:patient_registration) { create(:patient_registration, user_id: user.id) }
+   
+#     it '削除されること' do
+#       expect do
+#         delete patient_registrations_path(patient_registration.id)
+#       end.to change{ PatientRegistration.count }.by(-1)
+#     end
   end
 
   # describe 'アクセス制限' do
