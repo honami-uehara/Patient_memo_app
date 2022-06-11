@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts do
+  resources :patient_registrations do
     resource :bookmarks, only: [:create, :destroy]
   end
 

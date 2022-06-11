@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :post do
+  factory :patient_registration do
     name { "MyString" }
     warn { "MyText" }
     phone_number { "MyString" }

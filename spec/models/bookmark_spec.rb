@@ -2,8 +2,8 @@
 
  RSpec.describe Bookmark, type: :model do
   let!(:user) { create(:user) }
-  let!(:post) { create(:post) }
-  let!(:bookmark) { create(:bookmark, user_id: user.id, post_id: post.id) }
+  let!(:patient_registration) { create(:patient_registration) }
+  let!(:bookmark) { create(:bookmark, user_id: user.id, patient_registration_id: patient_registration.id) }
 
   describe 'ブックマーク機能' do
     context 'ブックマークできる場合' do
@@ -16,9 +16,9 @@
         expect(create(:bookmark, user_id: bookmark2.user_id)).to be_valid
       end
 
-      it "user_idが同じでもpost_idが違えばブックマーク出来る" do
+      it "user_idが同じでもpatient_registration_idが違えばブックマーク出来る" do
         bookmark2 = create(:bookmark)
-        expect(create(:bookmark, post_id: bookmark2.post_id)).to be_valid
+        expect(create(:bookmark, patient_registration_id: bookmark2.patient_registration_id)).to be_valid
       end
     end
 
@@ -28,14 +28,14 @@
         expect(bookmark.valid?).to eq(false)
       end
 
-      it "post_idがない" do
-        bookmark.post_id = ""
+      it "patient_registration_idがない" do
+        bookmark.patient_registration_id = ""
         expect(bookmark.valid?).to eq(false)
       end
 
-      it "user_id,post_id両方が一致しないとブックマークできない" do
+      it "user_id,patient_registration_id両方が一致しないとブックマークできない" do
         bookmark.user_id = "test1111"
-        bookmark.post_id = "test2222"
+        bookmark.patient_registration_id = "test2222"
         expect(bookmark.valid?).to eq(false)
       end
     end
