@@ -135,7 +135,7 @@ RSpec.describe "PatientRegistrations", type: :request do
 #        sign_in user
 #      end
 #     let(:patient_registration) { create(:patient_registration, user_id: user.id) }
-   
+
 #     it '削除されること' do
 #       expect do
 #         delete patient_registrations_path(patient_registration.id)
