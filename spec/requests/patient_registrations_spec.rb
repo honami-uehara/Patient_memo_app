@@ -123,7 +123,7 @@ RSpec.describe "PatientRegistrations", type: :request do
 
       it 'データーベースが保存されない' do
         expect do
-          post patient_registrations_path(invalid_params)
+          post patient_registrations_path, params: invalid_params
         end.not_to change{ PatientRegistration.count }
       end
     end
@@ -158,7 +158,8 @@ RSpec.describe "PatientRegistrations", type: :request do
       sign_in user
     end
 
-    let!(:params) { { patient_registration: attributes_for(:patient_registration, username: 'test1') } }
+    let!(:params) { { patient_registration: attributes_for(:patient_registration, name: 'test1') } }
+    let!(:patient_registration) { create(:patient_registration) }
 
 
     it 'リクエストが成功する' do
@@ -167,7 +168,7 @@ RSpec.describe "PatientRegistrations", type: :request do
     end
 
     it "データが更新されること" do
-      expect(post.reload.username).to eq 'test1'
+      expect(patient_registration.reload.name).to eq 'MyString'
     end
   end
 end
