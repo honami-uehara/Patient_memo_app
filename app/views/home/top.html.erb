@@ -1,5 +1,8 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<h1>患者情報メモアプリ</h1>
+<p><%= link_to "患者登録メモアプリとは", home_about_path, class:"about_p" %></p>
+<p><%= link_to "患者登録はこちらから", new_patient_registration_path, class:"new_patient_p" %></p>
+<p><%= link_to "要注意患者一覧",  "users/:id/bookmarks", class:"about_p" %></p>
+
 <% if user_signed_in? %>
 <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nonline" %></li>
 <li><%= link_to "編集" , edit_user_path(@user.id) , class:"edit_account" %></li>
