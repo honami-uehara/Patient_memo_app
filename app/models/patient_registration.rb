@@ -2,6 +2,7 @@ class PatientRegistration < ApplicationRecord
   belongs_to :user
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarkd_users, through: :bookmarks, source: :user
+  has_many :additional_comments
 
   with_options presence: true do
     validates :name, length: {maximum: 10}

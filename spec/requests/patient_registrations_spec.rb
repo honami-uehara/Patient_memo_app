@@ -118,44 +118,57 @@ RSpec.describe "PatientRegistrations", type: :request do
       end
     end
 
-#      context 'パラメーターが異常な場合' do
-#        let(:invalid_params) { { patient_registration: attributes_for(:patient_registration) } }
-#        let(:invalid_params) { { patient_registration: attributes_for(:patient_registration, :invalid) } }
+    context 'パラメーターが異常な場合' do
+      let(:invalid_params) { { patient_registration: attributes_for(:patient_registration, :invalid) } }
 
-#        it 'データーベースが保存されない' do
-#           expect do
-#            post patient_registrations_path(invalid_params)
-#           end.not_to change{ PatientRegistration.count }
-#        end
-#      end
-#    end
+      it 'データーベースが保存されない' do
+        expect do
+          post patient_registrations_path, params: invalid_params
+        end.not_to change{ PatientRegistration.count }
+      end
+    end
 
-#    describe 'POST/destory' do
-#      before do
-#        sign_in user
-#      end
-#     let(:patient_registration) { create(:patient_registration, user_id: user.id) }
+    describe 'POST/destory' do
 
-#     it '削除されること' do
-#       expect do
-#         delete patient_registrations_path(patient_registration.id)
-#       end.to change{ PatientRegistration.count }.by(-1)
-#     end
+      before do
+        sign_in user
+      end
+
+      let!(:patient_registration2) { create(:patient_registration) }
+
+      it '削除されること' do
+       expect do
+         delete patient_registration_path(patient_registration2)
+       end.to change{ PatientRegistration.count }.by(-1)
+     end
+    end
   end
 
-  # describe 'アクセス制限' do
-  #   context 'ログインページにリダイレクトされること' do
-  #     get patient_registrations_path
-  #     expect(response).to redirect_to(new_user_session_path)
-  #   end
-  # end
+  describe '非ログイン' do
+    context
+    it 'ログインページにリダイレクトされること' do
+      get patient_registrations_path
+      expect(response).to redirect_to(new_user_session_path)
+    end
+  end
 
   describe 'PATCH/update' do
+
     before do
       sign_in user
     end
-    
-    # it 'データが更新されること' do
-    # end
+
+    let!(:params) { { patient_registration: attributes_for(:patient_registration, name: 'test1') } }
+    let!(:patient_registration) { create(:patient_registration) }
+
+
+    it 'リクエストが成功する' do
+      post patient_registrations_path, params: params
+      expect(response.status).to eq 302
+    end
+
+    it "データが更新されること" do
+      expect(patient_registration.reload.name).to eq 'MyString'
+    end
   end
 end

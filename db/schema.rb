@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_04_120731) do
+ActiveRecord::Schema.define(version: 2022_06_13_105200) do
+
+  create_table "additional_comments", force: :cascade do |t|
+    t.string "content"
+    t.integer "user_id", null: false
+    t.integer "patient_registration_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.date "posted_date"
+    t.index ["patient_registration_id"], name: "index_additional_comments_on_patient_registration_id"
+    t.index ["user_id"], name: "index_additional_comments_on_user_id"
+  end
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "patient_registration_id", null: false
@@ -55,6 +66,7 @@ ActiveRecord::Schema.define(version: 2022_06_04_120731) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "additional_comments", "users"
   add_foreign_key "bookmarks", "patient_registrations"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "likes", "patient_registrations", column: "post_id"

@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :patient_registrations, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarked_patient_registrations, through: :bookmarks, source: :patient_registration
+  has_many :additional_comments
 
   validates :username, presence: true, length: { maximum: 10 }
 

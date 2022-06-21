@@ -42,6 +42,23 @@
     </tbody>
   </table>
 
+  <h3>追加コメント</h3>
+  <% @additional_comments.each do |additional_comment| %>
+    <div>
+      <%= additional_comment.user.username %>
+      <%= additional_comment.content %>
+      <%= additional_comment.posted_date %>
+      <%= link_to '削除',  patient_registration_additional_comment_path(@patient_registration, additional_comment), method: :delete %>
+    </div>
+  <% end %>
+
+  <%= form_for [@patient_registration, @additional_comment] do |f| %>
+    <%= f.text_field :content %><br>
+    <%= f.label :visit_date, "来院日" %><br>
+    <%= f.date_field :posted_date %>
+    <%= f.submit '追加メモする' %>
+  <% end %>
+
   <ul class="edit_submit">
     <li><%= link_to"患者登録一覧に戻る", :patient_registrations %></li>
     <li><%= link_to "編集する", edit_patient_registration_path(@patient_registration.id) %></li>

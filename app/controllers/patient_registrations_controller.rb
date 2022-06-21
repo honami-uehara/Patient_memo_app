@@ -22,9 +22,11 @@ class PatientRegistrationsController < ApplicationController
     end
   end
 
-  def show
+ def show
     @patient_registration = PatientRegistration.find(params[:id])
     @bookmark = Bookmark.new
+    @additional_comments = @patient_registration.additional_comments
+    @additional_comment = AdditionalComment.new
   end
 
   def edit
