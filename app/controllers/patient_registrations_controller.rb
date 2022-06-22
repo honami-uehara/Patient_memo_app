@@ -1,9 +1,10 @@
 class PatientRegistrationsController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :set_q, only: [:index, :search]
 
   def index
-    @patient_registrations = PatientRegistration.all
+    @patient_registrations = PatientRegistration.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def new
@@ -48,5 +49,15 @@ class PatientRegistrationsController < ApplicationController
     @patient_registration.destroy
     flash[:notice] = "患者登録を削除"
     redirect_to :patient_registrations
+  end
+
+  def search
+    @results = @q.result.order(created_at: :desc).page(params[:page]).per(5)
+  end
+
+  private
+
+  def set_q
+    @q = PatientRegistration.ransack(params[:q])
   end
 end
