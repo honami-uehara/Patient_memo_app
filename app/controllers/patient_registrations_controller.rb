@@ -1,7 +1,7 @@
 class PatientRegistrationsController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_q, only: [:index, :search]
+  before_action :set_q
 
   def index
     @patient_registrations = PatientRegistration.order(created_at: :desc).page(params[:page]).per(10)
