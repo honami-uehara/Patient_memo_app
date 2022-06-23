@@ -117,3 +117,10 @@ th {
 td {
  color: #444444;
 }
+
+.footer {
+  color: #808080;
+  background: #DCDDDF;
+  text-align: center;
+  padding: 120px;
+ }
