@@ -1,15 +1,30 @@
+<div class="top_head">
+    <div class="top_search_page">
+      <div class = "search_content">
+        <h2>患者検索</h2>
+        <%= search_form_for @q, url: search_patient_registrations_path do |f| %>
+          <%= f.label :medical_record_number_eq , 'カルテ番号' %>
+          <%= f.search_field :medical_record_number_eq  %>
+          <%= f.submit 'seach' %>
+          <br>
+          <%= f.label :name_cont, '名前' %>
+          <%= f.search_field :name_cont %>
+          <%= f.submit 'seach' %>
+          <br>
+          <%= f.label :phone_number_eq, '電話番号' %>
+          <%= f.search_field :phone_number_eq %>
+          <%= f.submit 'seach' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 <h1>患者情報メモアプリ</h1>
 <p><%= link_to "患者登録メモアプリとは", home_about_path, class:"about_p" %></p>
 <p><%= link_to "患者登録はこちらから", new_patient_registration_path, class:"new_patient_p" %></p>
-<p><%= link_to "要注意患者一覧",  "users/:id/bookmarks", class:"about_p" %></p>
+<p><%= link_to "要注意患者一覧",  "users/:id/bookmarks", class:"bookmarks_p" %></p>
 
-<% if user_signed_in? %>
-<li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nonline" %></li>
-<li><%= link_to "編集" , edit_user_path(@user.id) , class:"edit_account" %></li>
-<% else %>
-<li><%= link_to "ログイン", "/users/sign_in", class:"nonline login"  %></li>
-<li><%= link_to "新規登録", "/users/sign_up", class:"nonline new" %></li>
-<% end %>
+
 
 
 

@@ -1,9 +1,11 @@
 class PatientRegistrationsController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :set_q
 
   def index
-    @patient_registrations = PatientRegistration.all
+    @user = current_user
+    @patient_registrations = PatientRegistration.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def new
@@ -23,6 +25,7 @@ class PatientRegistrationsController < ApplicationController
   end
 
  def show
+    @user = current_user
     @patient_registration = PatientRegistration.find(params[:id])
     @bookmark = Bookmark.new
     @additional_comments = @patient_registration.additional_comments
@@ -30,6 +33,7 @@ class PatientRegistrationsController < ApplicationController
   end
 
   def edit
+    @user = current_user
     @patient_registration = PatientRegistration.find(params[:id])
   end
 
@@ -48,5 +52,16 @@ class PatientRegistrationsController < ApplicationController
     @patient_registration.destroy
     flash[:notice] = "患者登録を削除"
     redirect_to :patient_registrations
+  end
+
+  def search
+    @user = current_user
+    @results = @q.result.order(created_at: :desc).page(params[:page]).per(5)
+  end
+
+  private
+
+  def set_q
+    @q = PatientRegistration.ransack(params[:q])
   end
 end
