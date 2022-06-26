@@ -6,9 +6,11 @@ class HomeController < ApplicationController
   end
 
   def about
+    @user = current_user
   end
 
   def search
+    @user = current_user
     @results = @q.result.order(created_at: :desc).page(params[:page]).per(5)
   end
 

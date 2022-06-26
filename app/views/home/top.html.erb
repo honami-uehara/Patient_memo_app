@@ -3,8 +3,16 @@
       <div class = "search_content">
         <h2>患者検索</h2>
         <%= search_form_for @q, url: search_patient_registrations_path do |f| %>
+          <%= f.label :medical_record_number_eq , 'カルテ番号' %>
+          <%= f.search_field :medical_record_number_eq  %>
+          <%= f.submit 'seach' %>
+          <br>
           <%= f.label :name_cont, '名前' %>
           <%= f.search_field :name_cont %>
+          <%= f.submit 'seach' %>
+          <br>
+          <%= f.label :phone_number_eq, '電話番号' %>
+          <%= f.search_field :phone_number_eq %>
           <%= f.submit 'seach' %>
         <% end %>
       </div>
@@ -15,7 +23,7 @@
 <p><%= link_to "患者登録メモアプリとは", home_about_path, class:"about_p" %></p>
 <p><%= link_to "患者登録はこちらから", new_patient_registration_path, class:"new_patient_p" %></p>
 <p><%= link_to "要注意患者一覧",  "users/:id/bookmarks", class:"bookmarks_p" %></p>
-<p><%= link_to "患者登録一覧",  patient_registrations_path, class:"patient_registrations_p" %></p>
+
 
 
 
