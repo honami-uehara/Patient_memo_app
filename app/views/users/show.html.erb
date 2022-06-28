@@ -12,8 +12,9 @@
       </tr>
     </table>
 
-    <div class="edit_link">
-      <%= link_to "ブックマーク一覧",  bookmarks_user_path,class:"edit_account"  %>
-      <%= link_to "編集" , edit_user_registration_path(@user) , class:"edit_account" %>
+    <div class="link">
+      <%= link_to "ブックマーク一覧",  bookmarks_user_path,class:"bookmark_list"  %>
+      <br>
+      <%= link_to "編集" , edit_user_path(@user) , class:"edit_account" %>
    </div>
 </div>
