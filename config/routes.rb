@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get 'home/about'
 
-  resources :users, only: [:show, :edit, :update] do
+  resource :account, only: [:show, :edit, :update] do
     member do
       get :bookmarks
     end
