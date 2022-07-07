@@ -14,40 +14,18 @@
 .button {
   background-color: #e57a7c;
   color: #DCDDDF;
-  padding: 5px 30px;
+  padding: 5px 20px;
   cursor: pointer;
   border: none;
+  border-radius: 20px;
 }
 
 form {
   padding: 0 1.5em;
 }
 
-.form-footer {
-  text-align: center;
-}
-
-.form-footer a {
-  color: #8c8c8c;
-  text-decoration: none;
-  transition: border-color 0.3s;
-}
-
-.form-footer a:hover {
-  opacity: 0.5;
-  cursor: pointer;
-}
-
-
 
 // ログインページcss
-.login_view {
-  background-color: #FFFFFF;
-  text-align: center;
-  margin: 3em auto;
-  padding: 10%;
-  max-width: 370px;
-}
 
 .login-pass {
   letter-spacing: 3px;
@@ -57,17 +35,21 @@ form {
   font-size: 15px;
   height: 40px;
   width: 100%;
+  letter-spacing: 5px;
+  padding: 10px;
+}
+
+.login_from {
+  line-height: 60px;
+}
+
+.submit_login {
+  font-size: 10px;
+  padding: 20px;
+  color: #e57a7c;
 }
 
 // 新規登録ページ
-
-.login_new_view {
-  background-color: #FFFFFF;
-  text-align: center;
-  margin: 3em auto;
-  padding: 10%;
-  max-width: 370px;
-}
 
 .new_pass {
   background: #fafafa;
@@ -87,12 +69,8 @@ form {
 
 // ユーザーshow
 
-.account_view {
-  background-color: #FFFFFF;
-  text-align: center;
-  margin: 3em auto;
-  padding: 10%;
-  max-width: 370px;
+.table_header {
+  width: 150px;
 }
 
 .link {
@@ -118,14 +96,6 @@ form {
 
 // アカウントedit
 
-.account_edit_view {
-  background-color: #FFFFFF;
-  text-align: center;
-  margin: 3em auto;
-  padding: 10%;
-  max-width: 370px;
-}
-
 .edit_pass {
   background: #fafafa;
   border: none;
@@ -134,6 +104,7 @@ form {
   height: 40px;
   width: 100%;
   letter-spacing: 5px;
+  padding: 10px;
 }
 
 .edit_submit {
@@ -141,5 +112,4 @@ form {
   padding: 10px;
   color: #e57a7c;
 }
-
 
