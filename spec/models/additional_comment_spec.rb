@@ -8,11 +8,11 @@ RSpec.describe AdditionalComment, type: :model do
   describe 'バリデーション' do
     context 'コメントが投稿できる' do
       it 'フォームを正しく入力すれば投稿できる' do
-        expect(additional_comment). to be_valid
+        expect(additional_comment.valid?).to eq(true)
       end
 
       it '投稿内容が１００文字以下' do
-        expect(additional_comment.valid?). to eq(true)
+        expect(additional_comment.valid?).to eq(true)
       end
     end
 

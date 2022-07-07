@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
     context '登録できる' do
       let(:username) { '123456789' }
         it '全ての項目の入力されている' do
-          expect(create(:user)).to be_valid
+          expect(create(:user).valid?).to eq(true)
         end
 
         it '名前が１０文字以下' do
@@ -45,7 +45,7 @@ RSpec.describe User, type: :model do
 
     it 'メールアドレスが重複していたら登録できないこと' do
       user1 = create(:user,username: "test1", email: "test1@example.com")
-      expect(build(:user, username: "test2", email: user1.email)).to_not be_valid
+      expect(build(:user, username: "test2", email: user1.email).valid?).to eq(false)
     end
   end
 end

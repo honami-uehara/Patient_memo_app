@@ -8,17 +8,17 @@
   describe 'ブックマーク機能' do
     context 'ブックマークできる場合' do
       it "user_id,post_idがあれば保存できる" do
-        expect(bookmark).to be_valid
+        expect(bookmark.valid?).to eq(true)
       end
 
       it "post_idが同じでもuser_idが違えばブックマークできる" do
         bookmark2 = create(:bookmark)
-        expect(create(:bookmark, user_id: bookmark2.user_id)).to be_valid
+        expect(create(:bookmark, user_id: bookmark2.user_id).valid?).to eq(true)
       end
 
       it "user_idが同じでもpatient_registration_idが違えばブックマーク出来る" do
         bookmark2 = create(:bookmark)
-        expect(create(:bookmark, patient_registration_id: bookmark2.patient_registration_id)).to be_valid
+        expect(create(:bookmark, patient_registration_id: bookmark2.patient_registration_id).valid?).to eq(true)
       end
     end
 

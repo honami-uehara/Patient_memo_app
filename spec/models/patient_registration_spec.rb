@@ -7,7 +7,7 @@ RSpec.describe PatientRegistration, type: :model do
   describe 'バリデーション' do
     context '登録する' do
       it '全ての項目の入力されている' do
-        expect(create(:patient_registration)).to be_valid
+        expect(create(:patient_registration).valid?).to eq(true)
       end
     end
 
