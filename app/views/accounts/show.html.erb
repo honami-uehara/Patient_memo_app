@@ -1,0 +1,20 @@
+<div class="account_view">
+  <h2 class="title">アカウント詳細</h2>
+    <table>
+      <tr>
+        <th class="table_header">名前</th>
+        <td><%= @user.username %></td>
+      </tr>
+
+      <tr>
+        <th class="table_header">メールアドレス</th>
+        <td><%= @user.email %></td>
+      </tr>
+    </table>
+
+    <div class="link">
+      <%= link_to "ブックマーク一覧",  bookmarks_account_path,class:"bookmark_list"  %>
+      <br>
+      <%= link_to "編集" , edit_account_path, class:"edit_account" %>
+   </div>
+</div>

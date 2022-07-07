@@ -1,35 +1,31 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-<h1 class= "title">患者情報メモアプリ</h1>
-<p><%= link_to "患者登録メモアプリとは", home_about_path, class:"about_p" %></p>
-<p><%= link_to "患者登録はこちらから", new_patient_registration_path, class:"new_patient_p" %></p>
-<p><%= link_to "要注意患者一覧",  "users/:id/bookmarks", class:"bookmarks_p" %></p>
+<div class="home_view">
+  <h1 class= "title">患者情報メモアプリ</h1>
+  <div class="link_container">
+    <p><span>＼</span><%= link_to "患者登録はこちらをクリック", new_patient_registration_path %><span>／</span></p>
+    <p><%= link_to "要注意患者一覧", bookmarks_account_path, class:"link_p" %></p>
+    <p><%= link_to "患者一覧", patient_registrations_path, class:"link_p" %></p>
+  </div>
   <div class="top_head">
     <div class="top_search_page">
       <div class = "search_content">
-        <h2>患者検索</h2>
+        <h1 class= "title">患者検索</h1>
         <%= search_form_for @q, url: search_patient_registrations_path do |f| %>
-          <%= f.label :medical_record_number_eq , 'カルテ番号' %>
-          <%= f.search_field :medical_record_number_eq  %>
-          <%= f.submit 'seach' %>
+          <%= f.label :medical_record_number_eq , 'カルテ番号', class:"search_column"%>
+          <%= f.search_field :medical_record_number_eq, class:"search_window" %>
+          <%= f.submit 'search', class:"search_btn" %>
           <br>
-          <%= f.label :name_cont, '名前' %>
-          <%= f.search_field :name_cont %>
-          <%= f.submit 'seach' %>
+          <%= f.label :name_cont, '名前', class:"search_column2" %>
+          <%= f.search_field :name_cont, class:"search_window" %>
+          <%= f.submit 'search', class:"search_btn" %>
           <br>
-          <%= f.label :phone_number_eq, '電話番号' %>
-          <%= f.search_field :phone_number_eq %>
-          <%= f.submit 'seach' %>
+          <%= f.label :phone_number_eq, '電話番号', class:"search_column3" %>
+          <%= f.search_field :phone_number_eq, class:"search_window" %>
+          <%= f.submit 'search', class:"search_btn" %>
         <% end %>
       </div>
     </div>
   </div>
+</div>
 
 
 

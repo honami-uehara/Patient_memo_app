@@ -1,20 +1,22 @@
-<div class = "login_view">
+<div class= "login_view">
   <h2 class ="title">Login Form</h2>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"Email", class:"login-pass" %>
-    </div>
+    <div class="login_from">
+      <div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"Email", class:"login-pass" %>
+      </div>
 
-    <div>
-      <%= f.password_field :password, autocomplete: "current-password",placeholder:"Password", class:"login-pass" %>
-    </div>
+      <div>
+        <%= f.password_field :password, autocomplete: "current-password",placeholder:"Password", class:"login-pass" %>
+      </div>
 
-    <div>
-      <p><%= f.submit "ログイン", class:"button" %></p>
-    </div>
+      <div class="submit_login">
+        <p><%= f.submit "ログイン", class:"button" %></p>
+      </div>
 
-    <div class="form-footer">
-      <p><%= link_to "新規アカウント作成", new_user_registration_path %></p>
+      <div class="form-home">
+        <p><%= link_to "新規アカウント作成", new_user_registration_path %></p>
+      </div>
     </div>
   <% end %>
 </div>
