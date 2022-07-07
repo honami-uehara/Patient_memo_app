@@ -13,19 +13,5 @@
  *= require_tree .
  *= require_self
  */
- body {
-  background: #FFFFFF;
-}
 
-ul, li {
-  list-style: none;
-  line-height: 50px;
-}
 
-th {
-  color: #808080;
-}
-
-td {
- color: #444444;
-}
