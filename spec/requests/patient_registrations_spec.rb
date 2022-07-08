@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "PatientRegistrations", type: :request do
+RSpec.describe 'PatientRegistrations', type: :request do
   let(:patient_registration) { create(patient_registration, user_id: user.id) }
   let(:user) { create(:user) }
 
@@ -15,7 +17,7 @@ RSpec.describe "PatientRegistrations", type: :request do
     end
 
     it 'タイトルが表示されていること' do
-      expect(response.body).to include "登録者一覧"
+      expect(response.body).to include '登録者一覧'
     end
   end
 
@@ -29,7 +31,6 @@ RSpec.describe "PatientRegistrations", type: :request do
     end
   end
 
-
   describe 'GET/show' do
     let(:user) { create(:user) }
     let(:patient_registration) { create(:patient_registration, user_id: user.id) }
@@ -40,7 +41,7 @@ RSpec.describe "PatientRegistrations", type: :request do
     end
 
     it 'リクエストが成功すること' do
-       expect(response.status).to eq 200
+      expect(response.status).to eq 200
     end
 
     it '名前が表示できること' do
@@ -74,7 +75,7 @@ RSpec.describe "PatientRegistrations", type: :request do
     end
 
     it 'リクエストが成功すること' do
-       expect(response.status).to eq 200
+      expect(response.status).to eq 200
     end
 
     it '名前が表示できること' do
@@ -109,8 +110,8 @@ RSpec.describe "PatientRegistrations", type: :request do
       it 'データーベースへの保存が成功すること' do
         expect do
           post patient_registrations_path(params)
-        end.to change{ PatientRegistration.count }.by(1)
-       end
+        end.to change { PatientRegistration.count }.by(1)
+      end
 
       it 'リクエストが成功する' do
         post patient_registrations_path, params: params
@@ -124,12 +125,11 @@ RSpec.describe "PatientRegistrations", type: :request do
       it 'データーベースが保存されない' do
         expect do
           post patient_registrations_path, params: invalid_params
-        end.not_to change{ PatientRegistration.count }
+        end.not_to change { PatientRegistration.count }
       end
     end
 
     describe 'POST/destory' do
-
       before do
         sign_in user
       end
@@ -137,10 +137,10 @@ RSpec.describe "PatientRegistrations", type: :request do
       let!(:patient_registration2) { create(:patient_registration) }
 
       it '削除されること' do
-       expect do
-         delete patient_registration_path(patient_registration2)
-       end.to change{ PatientRegistration.count }.by(-1)
-     end
+        expect do
+          delete patient_registration_path(patient_registration2)
+        end.to change { PatientRegistration.count }.by(-1)
+      end
     end
   end
 
@@ -153,7 +153,6 @@ RSpec.describe "PatientRegistrations", type: :request do
   end
 
   describe 'PATCH/update' do
-
     before do
       sign_in user
     end
@@ -161,13 +160,12 @@ RSpec.describe "PatientRegistrations", type: :request do
     let!(:params) { { patient_registration: attributes_for(:patient_registration, name: 'test1') } }
     let!(:patient_registration) { create(:patient_registration) }
 
-
     it 'リクエストが成功する' do
       post patient_registrations_path, params: params
       expect(response.status).to eq 302
     end
 
-    it "データが更新されること" do
+    it 'データが更新されること' do
       expect(patient_registration.reload.name).to eq 'MyString'
     end
   end

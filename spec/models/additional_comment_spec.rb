@@ -1,9 +1,13 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe AdditionalComment, type: :model do
   let(:user) { create(:user) }
   let(:patient_registration) { create(:patient_registration) }
-  let(:additional_comment) { build(:additional_comment, user_id: user.id, patient_registration_id: patient_registration.id) }
+  let(:additional_comment) do
+    build(:additional_comment, user_id: user.id, patient_registration_id: patient_registration.id)
+  end
 
   describe 'バリデーション' do
     context 'コメントが投稿できる' do
@@ -18,17 +22,17 @@ RSpec.describe AdditionalComment, type: :model do
 
     context 'コメントが投稿できない' do
       it '投稿が空欄' do
-        additional_comment.content = ""
+        additional_comment.content = ''
         expect(additional_comment.valid?).to eq(false)
       end
 
       it 'user_idがない' do
-        additional_comment.user_id = ""
+        additional_comment.user_id = ''
         expect(additional_comment.valid?).to eq(false)
       end
 
       it 'patient_registration_idがない' do
-        additional_comment.patient_registration_id = ""
+        additional_comment.patient_registration_id = ''
         expect(additional_comment.valid?).to eq(false)
       end
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root 'home#top'
   devise_for :users, controllers: {
@@ -12,21 +14,20 @@ Rails.application.routes.draw do
 
   get 'home/about'
 
-  resource :account, only: [:show, :edit, :update] do
+  resource :account, only: %i[show edit update] do
     member do
       get :bookmarks
     end
   end
 
   resources :patient_registrations do
-    resource :bookmarks, only: [:create, :destroy]
-    resources :additional_comments, only: [:create, :destroy]
+    resource :bookmarks, only: %i[create destroy]
+    resources :additional_comments, only: %i[create destroy]
 
     collection do
       get :search
     end
   end
-
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Users::Registrations', type: :request do
-  let(:user){ create(:user) }
+  let(:user) { create(:user) }
   let(:user_params) { build(:user) }
 
   describe 'GET /users/sign_up' do

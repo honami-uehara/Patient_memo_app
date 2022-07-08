@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AdditionalCommentsController < ApplicationController
   before_action :authenticate_user!
 
@@ -23,6 +25,7 @@ class AdditionalCommentsController < ApplicationController
   private
 
   def additional_comment_params
-    params.require(:additional_comment).permit(:content, :posted_date).merge(patient_registration_id: params[:patient_registration_id])
+    params.require(:additional_comment).permit(:content,
+                                               :posted_date).merge(patient_registration_id: params[:patient_registration_id])
   end
 end

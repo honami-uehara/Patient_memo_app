@@ -1,5 +1,6 @@
-class BookmarksController < ApplicationController
+# frozen_string_literal: true
 
+class BookmarksController < ApplicationController
   def create
     @bookmark = current_user.bookmarks.create(patient_registration_id: params[:patient_registration_id])
     redirect_back(fallback_location: root_path)
