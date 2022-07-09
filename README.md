@@ -21,7 +21,7 @@
 
 ## 開発環境
 
-M1 mac
+•M1 mac
 Ruby 3.0.3
 Ruby on Rails 6.1.4
 MySQL (これから書く）
