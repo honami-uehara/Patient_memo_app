@@ -119,16 +119,6 @@ RSpec.describe 'PatientRegistrations', type: :request do
       end
     end
 
-    context 'パラメーターが異常な場合' do
-      let(:invalid_params) { { patient_registration: attributes_for(:patient_registration, :invalid) } }
-
-      it 'データーベースが保存されない' do
-        expect do
-          post patient_registrations_path, params: invalid_params
-        end.not_to change { PatientRegistration.count }
-      end
-    end
-
     describe 'POST/destory' do
       before do
         sign_in user
