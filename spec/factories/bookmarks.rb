@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :bookmark do
-    association :patient_registration
+    association :patient
     association :user
   end
 end

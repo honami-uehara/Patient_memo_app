@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :patient_registration do
+  factory :patient do
     name { 'MyString' }
     warn { 'MyText' }
     phone_number { 'MyString' }

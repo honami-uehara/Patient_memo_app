@@ -12,5 +12,5 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe PatientRegistration, type: :helper do
+RSpec.describe Patient, type: :helper do
 end
