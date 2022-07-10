@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :patient_registrations do
+  resources :patients do
     resource :bookmarks, only: %i[create destroy]
     resources :additional_comments, only: %i[create destroy]
 

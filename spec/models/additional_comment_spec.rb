@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe AdditionalComment, type: :model do
   let(:user) { create(:user) }
-  let(:patient_registration) { create(:patient_registration) }
+  let(:patient) { create(:patient) }
   let(:additional_comment) do
-    build(:additional_comment, user_id: user.id, patient_registration_id: patient_registration.id)
+    build(:additional_comment, user_id: user.id, patient_id: patient.id)
   end
 
   describe 'バリデーション' do
@@ -31,8 +31,8 @@ RSpec.describe AdditionalComment, type: :model do
         expect(additional_comment.valid?).to eq(false)
       end
 
-      it 'patient_registration_idがない' do
-        additional_comment.patient_registration_id = ''
+      it 'patient_idがない' do
+        additional_comment.patient_id = ''
         expect(additional_comment.valid?).to eq(false)
       end
     end

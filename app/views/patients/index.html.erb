@@ -1,6 +1,6 @@
 <div class="patient_list">
   <h3 class="patient_h3">患者検索</h3>
-  <%= search_form_for @q, url: search_patient_registrations_path do |f| %>
+  <%= search_form_for @q, url: search_patients_path do |f| %>
     <%= f.label :medical_record_number_eq , 'カルテ番号', class:"search_column"%>
     <%= f.search_field :medical_record_number_eq, class:"search_window" %>
     <%= f.submit 'search', class:"search_btn" %>
@@ -30,17 +30,17 @@
     </thead>
 
     <tbody>
-      <% @patient_registrations.each do |patient_registration| %>
+      <% @patients.each do |patient| %>
         <tr class="tr_list">
-          <td class="td_list"><%= patient_registration.medical_record_number %></td>
-          <td class="td_list"><%= patient_registration.name %></td>
-          <td class="td_list"><%= patient_registration.phone_number %></td>
-          <td class="td_list"><%= patient_registration.warn %></td>
-          <td class="td_list"><%= patient_registration.maintenance_or_treatment %></td>
-          <td class="td_list"><%= patient_registration.visit_date %></td>
-          <td class="td_list"><%= link_to "詳細", patient_registration %></td>
-          <td class="td_list"><%= link_to "編集", edit_patient_registration_path(patient_registration.id) %></td>
-          <td class="td_list"><%= link_to "削除", patient_registration, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+          <td class="td_list"><%= patient.medical_record_number %></td>
+          <td class="td_list"><%= patient.name %></td>
+          <td class="td_list"><%= patient.phone_number %></td>
+          <td class="td_list"><%= patient.warn %></td>
+          <td class="td_list"><%= patient.maintenance_or_treatment %></td>
+          <td class="td_list"><%= patient.visit_date %></td>
+          <td class="td_list"><%= link_to "詳細", patient %></td>
+          <td class="td_list"><%= link_to "編集", edit_patient_path(patient.id) %></td>
+          <td class="td_list"><%= link_to "削除", patient, method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
         </tr>
       <% end %>
     </tbody>

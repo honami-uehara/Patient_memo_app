@@ -19,6 +19,6 @@ class HomeController < ApplicationController
   private
 
   def set_q
-    @q = PatientRegistration.ransack(params[:q])
+    @q = Patient.ransack(params[:q])
   end
 end

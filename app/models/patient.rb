@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class PatientRegistration < ApplicationRecord
+class Patient < ApplicationRecord
   belongs_to :user
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarkd_users, through: :bookmarks, source: :user

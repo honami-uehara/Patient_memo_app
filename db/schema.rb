@@ -12,28 +12,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_220_613_105_200) do
+ActiveRecord::Schema.define(version: 20_220_710_162_826) do
   create_table 'additional_comments', force: :cascade do |t|
     t.string 'content'
     t.integer 'user_id', null: false
-    t.integer 'patient_registration_id'
+    t.integer 'patient_id'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
     t.date 'posted_date'
-    t.index ['patient_registration_id'], name: 'index_additional_comments_on_patient_registration_id'
+    t.index ['patient_id'], name: 'index_additional_comments_on_patient_id'
     t.index ['user_id'], name: 'index_additional_comments_on_user_id'
   end
 
   create_table 'bookmarks', force: :cascade do |t|
-    t.integer 'patient_registration_id', null: false
+    t.integer 'patient_id', null: false
     t.integer 'user_id', null: false
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
-    t.index ['patient_registration_id'], name: 'index_bookmarks_on_patient_registration_id'
+    t.index ['patient_id'], name: 'index_bookmarks_on_patient_id'
     t.index ['user_id'], name: 'index_bookmarks_on_user_id'
   end
 
-  create_table 'patient_registrations', force: :cascade do |t|
+  create_table 'patients', force: :cascade do |t|
     t.string 'name'
     t.text 'warn'
     t.string 'phone_number'
@@ -59,6 +59,6 @@ ActiveRecord::Schema.define(version: 20_220_613_105_200) do
   end
 
   add_foreign_key 'additional_comments', 'users'
-  add_foreign_key 'bookmarks', 'patient_registrations'
+  add_foreign_key 'bookmarks', 'patients'
   add_foreign_key 'bookmarks', 'users'
 end
