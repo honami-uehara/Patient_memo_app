@@ -1,3 +1,115 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.title {
+  color: #e57a7c;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 10px 0 30px 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.button {
+  background-color: #e57a7c;
+  color: #DCDDDF;
+  padding: 5px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 20px;
+}
+
+form {
+  padding: 0 1.5em;
+}
+
+
+// ログインページcss
+
+.login-pass {
+  letter-spacing: 3px;
+  background: #fafafa;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  font-size: 15px;
+  height: 40px;
+  width: 100%;
+  letter-spacing: 5px;
+  padding: 10px;
+}
+
+.login_from {
+  line-height: 60px;
+}
+
+.submit_login {
+  font-size: 10px;
+  padding: 20px;
+  color: #e57a7c;
+}
+
+// 新規登録ページ
+
+.new_pass {
+  background: #fafafa;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  font-size: 15px;
+  height: 40px;
+  width: 100%;
+  letter-spacing: 5px;
+}
+
+.login-account {
+  font-size: 10px;
+  padding: 10px;
+  color: #e57a7c;
+}
+
+// ユーザーshow
+
+.table_header {
+  width: 150px;
+}
+
+.link {
+  margin: 2em auto;
+}
+
+.link a:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.bookmark_list {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}
+
+.edit_account {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}
+
+// アカウントedit
+
+.edit_pass {
+  background: #fafafa;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  font-size: 15px;
+  height: 40px;
+  width: 100%;
+  letter-spacing: 5px;
+  padding: 10px;
+}
+
+.edit_submit {
+  font-size: 10px;
+  padding: 10px;
+  color: #e57a7c;
+}
+

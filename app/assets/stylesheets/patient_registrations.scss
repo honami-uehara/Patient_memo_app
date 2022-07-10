@@ -1,3 +1,151 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// 患者登録／編集
+
+.patient_view {
+  background-color: #FFFFFF;
+  text-align: center;
+  margin: 96px auto;
+  max-width: 550px;
+  padding: 96px;
+}
+
+.patient_pass {
+  letter-spacing: 5px;
+  background: #fafafa;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  font-size: 15px;
+  height: 40px;
+  width: 100%;
+}
+
+.label_name {
+  color: #808080;
+}
+
+.patient_new_pass {
+  background: #fafafa;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  font-size: 15px;
+  height: 40px;
+  width: 100%;
+  letter-spacing: 5px;
+}
+
+.patient_submit {
+  font-size: 10px;
+  padding: 10px;
+  color: #e57a7c;
+}
+
+.form-home {
+  text-align: center;
+}
+
+.form-home a {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}
+
+.form-home a:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+// 患者情報詳細
+.patient_show {
+  background-color: #FFFFFF;
+  text-align: center;
+  margin: 8px auto;
+  max-width: 550px;
+  padding: 96px;
+}
+
+
+
+// 一覧 bookmark search
+
+.patient_list {
+  margin: 96px auto;
+  text-align: center;
+  padding: 24px;
+}
+
+.table_list {
+  border-collapse:collapse;
+  margin:40px auto;
+}
+
+.td_list {
+  border:1px solid #FF9999;
+  padding:10px;
+  color: #666666;
+}
+
+.th_list {
+  border:1px solid #FF9999;
+  padding:10px;
+  background: #FFCCCC;
+  color: #999999;
+}
+
+.patient_h3 {
+  text-align: center;
+  margin: 48px;
+  color: #e57a7c;
+}
+
+.td_list a {
+  text-decoration: none;
+  color: #808080;
+}
+
+.td_list a:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.comment_h3 {
+  color: #666666;
+  padding-bottom: 16px;
+}
+
+.visit_date {
+  padding: 16px;
+}
+
+.show_submit {
+  text-align: center;
+  padding-bottom: 16px;
+}
+
+.show_submit a {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}
+
+.show_submit a:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.comment_delete {
+  color: #666666;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}
+
+.comment_delete a:hover {
+  cursor: pointer;
+  display: block;
+}
+
+.search_content {
+  padding: 8px;
+}

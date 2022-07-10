@@ -1,0 +1,83 @@
+body {
+  background: #FFFFFF;
+  margin: 0;
+  width: 100%;
+
+}
+
+ul, li {
+  list-style: none;
+  line-height: 50px;
+}
+
+span {
+  color: #FF33CC;
+}
+
+// ホームに戻るリンク
+.form-home {
+  text-align: center;
+  padding-bottom: 96px;
+}
+
+.form-home a {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}
+
+.form-home a:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+// アカウントshow/edit共通
+
+.account_view {
+  background-color: #FFFFFF;
+  text-align: center;
+  margin: 96px auto;
+  max-width: 550px;
+  padding: 96px;
+}
+
+// ログイン/新規登録ページ共通
+
+.login_view {
+  background-color: #FFFFFF;
+  text-align: center;
+  margin: 96px auto;
+  padding: 96px;
+  max-width: 550px;
+}
+
+// 登録の際の間隔
+
+.register {
+  line-height: 45px;
+}
+
+
+// 検索機能
+
+.search_btn {
+  border: solid 1px #333;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  color: #FFCCCC;
+}
+
+.search_column {
+  padding: 20px;
+  color: #666666;
+}
+
+.search_column2 {
+  padding: 44px;
+  color: #666666;
+}
+
+.search_column3 {
+  padding: 28px;
+  color: #666666;
+}

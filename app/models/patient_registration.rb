@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PatientRegistration < ApplicationRecord
   belongs_to :user
   has_many :bookmarks, dependent: :destroy
@@ -5,7 +7,7 @@ class PatientRegistration < ApplicationRecord
   has_many :additional_comments, dependent: :destroy
 
   with_options presence: true do
-    validates :name, length: {maximum: 10}
+    validates :name, length: { maximum: 10 }
     validates :warn
     validates :phone_number
     validates :medical_record_number
@@ -13,12 +15,9 @@ class PatientRegistration < ApplicationRecord
     validates :visit_date
   end
 
-
   validate :day_after_today, on: :create
 
   def day_after_today
-    if visit_date > Date.today
-      errors.add(:visit_date, "今日を含む過去の日付を入力して下さい")
-    end
+    errors.add(:visit_date, '今日を含む過去の日付を入力して下さい') if visit_date > Date.today
   end
 end

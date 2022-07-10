@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -12,6 +14,6 @@ class User < ApplicationRecord
   validates :username, presence: true, length: { maximum: 10 }
 
   def already_bookmarkd?(patient_registration)
-    self.bookmarks.exists?(patient_registration_id: patient_registration.id)
+    bookmarks.exists?(patient_registration_id: patient_registration.id)
   end
 end

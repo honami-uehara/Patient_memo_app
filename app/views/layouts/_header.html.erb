@@ -1,13 +1,14 @@
 <header>
   <nav>
-    <ul class= "header-menus">
+    <ul>
       <% if user_signed_in? %>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nonline" %></li>
-        <li><%= link_to "編集" , edit_user_path(@user.id) , class:"edit_account" %></li>
+        <li><%= link_to "-about-", home_about_path %></li>
+        <li><%= link_to "myアカウント" , account_path %></li>
+        <li><%= link_to "アカウント編集" , edit_account_path %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <li><%= link_to "ログイン", "/users/sign_in", class:"nonline login"  %></li>
-        <li><%= link_to "新規登録", "/users/sign_up", class:"nonline new" %></li>
-  
+        <li><%= link_to "ログイン", "/users/sign_in" %></li>
+        <li><%= link_to "新規登録", "/users/sign_up" %></li>
       <% end %>
     </ul>
   </nav>

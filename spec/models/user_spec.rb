@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -6,13 +8,13 @@ RSpec.describe User, type: :model do
   describe 'バリデーション' do
     context '登録できる' do
       let(:username) { '123456789' }
-        it '全ての項目の入力されている' do
-          expect(create(:user)).to be_valid
-        end
+      it '全ての項目の入力されている' do
+        expect(create(:user).valid?).to eq(true)
+      end
 
-        it '名前が１０文字以下' do
-          expect(user.valid?).to eq(true)
-        end
+      it '名前が１０文字以下' do
+        expect(user.valid?).to eq(true)
+      end
     end
   end
 
@@ -33,8 +35,8 @@ RSpec.describe User, type: :model do
     end
 
     it 'パスワードと確認が一致していない' do
-      user.password = "test1111"
-      user.password_confirmation = "test2222"
+      user.password = 'test1111'
+      user.password_confirmation = 'test2222'
       expect(user.valid?).to eq(false)
     end
 
@@ -44,8 +46,8 @@ RSpec.describe User, type: :model do
     end
 
     it 'メールアドレスが重複していたら登録できないこと' do
-      user1 = create(:user,username: "test1", email: "test1@example.com")
-      expect(build(:user, username: "test2", email: user1.email)).to_not be_valid
+      user1 = create(:user, username: 'test1', email: 'test1@example.com')
+      expect(build(:user, username: 'test2', email: user1.email).valid?).to eq(false)
     end
   end
 end
