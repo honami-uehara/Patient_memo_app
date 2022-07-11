@@ -41,7 +41,7 @@ bookmark機能（ブックマークをしておくことで一覧ですぐ確認
 ページネーション機能
 
 ## ER図
-
+/Users/honami/workspace/Patient_memo_app/erd.pdf
 これから記載
 
 ## テスト用アカウント
