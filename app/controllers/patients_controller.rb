@@ -40,7 +40,7 @@ class PatientsController < ApplicationController
 
   def update
     @patient = Patient.find(params[:id])
-    if Patient.update(params.require(:patient).permit(:name, :warn, :phone_number, :medical_record_number, :maintenance_or_treatment, :visit_date))
+    if @patient.update(params.require(:patient).permit(:name, :warn, :phone_number, :medical_record_number, :maintenance_or_treatment, :visit_date))
       flash[:notice] = '患者情報を更新しました'
       redirect_to :patients
     else
