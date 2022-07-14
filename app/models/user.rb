@@ -17,3 +17,4 @@ class User < ApplicationRecord
     bookmarks.exists?(patient_id: patient.id)
   end
 end
+

@@ -10,3 +10,4 @@ class Bookmark < ApplicationRecord
     validates :patient_id
   end
 end
+

@@ -66,3 +66,5 @@ class PatientsController < ApplicationController
     @q = Patient.ransack(params[:q])
   end
 end
+
+

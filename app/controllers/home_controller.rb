@@ -22,3 +22,5 @@ class HomeController < ApplicationController
     @q = Patient.ransack(params[:q])
   end
 end
+
+

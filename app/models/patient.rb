@@ -21,3 +21,4 @@ class Patient < ApplicationRecord
     errors.add(:visit_date, '今日を含む過去の日付を入力して下さい') if visit_date > Date.today
   end
 end
+

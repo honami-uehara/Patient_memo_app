@@ -31,3 +31,4 @@ RSpec.describe 'Users::Registrations', type: :request do
     end
   end
 end
+

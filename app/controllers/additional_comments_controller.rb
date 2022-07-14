@@ -25,7 +25,6 @@ class AdditionalCommentsController < ApplicationController
   private
 
   def additional_comment_params
-    params.require(:additional_comment).permit(:content,
-                                               :posted_date).merge(patient_id: params[:patient_id])
+    params.require(:additional_comment).permit(:content, :posted_date).merge(patient_id: params[:patient_id])
   end
 end
