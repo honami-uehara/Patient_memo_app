@@ -160,4 +160,3 @@ RSpec.describe 'Patients', type: :request do
     end
   end
 end
-

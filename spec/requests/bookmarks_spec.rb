@@ -33,4 +33,3 @@ RSpec.describe 'Bookmarks', type: :request do
     end
   end
 end
-

@@ -33,4 +33,3 @@ RSpec.describe 'Users::Sessions', type: :request do
     end
   end
 end
-

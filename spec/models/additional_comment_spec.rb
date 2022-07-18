@@ -38,4 +38,3 @@ RSpec.describe AdditionalComment, type: :model do
     end
   end
 end
-

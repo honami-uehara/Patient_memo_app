@@ -5,4 +5,3 @@ class AdditionalComment < ApplicationRecord
   belongs_to :patient
   validates :content, presence: true, length: { maximum: 100 }
 end
-
