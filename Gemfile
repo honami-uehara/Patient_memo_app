@@ -61,5 +61,6 @@ end
 gem 'devise'
 gem 'kaminari'
 gem 'pry-rails'
+gem 'rails-erd'
 gem 'ransack'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
