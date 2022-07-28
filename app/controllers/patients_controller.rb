@@ -3,15 +3,15 @@
 class PatientsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_q
+  before_action :set_user
+  before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
   def index
-    @user = current_user
     @patients = Patient.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def new
     @patient = Patient.new
-    @user = current_user
   end
 
   def create
@@ -26,21 +26,16 @@ class PatientsController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @patient = Patient.find(params[:id])
     @bookmark = Bookmark.new
     @additional_comments = @patient.additional_comments
     @additional_comment = AdditionalComment.new
   end
 
   def edit
-    @user = current_user
-    @patient = Patient.find(params[:id])
   end
 
   def update
-    @patient = Patient.find(params[:id])
-    if @patient.update(params.require(:patient).permit(:name, :warn, :phone_number, :medical_record_number, :maintenance_or_treatment, :visit_date))
+    if @patient.update(patient_params)
       flash[:notice] = '患者情報を更新しました'
       redirect_to :patients
     else
@@ -49,14 +44,12 @@ class PatientsController < ApplicationController
   end
 
   def destroy
-    @patient = Patient.find(params[:id])
     @patient.destroy
     flash[:notice] = '患者登録を削除'
     redirect_to :patients
   end
 
   def search
-    @user = current_user
     @results = @q.result.order(created_at: :desc).page(params[:page]).per(5)
   end
 
@@ -64,5 +57,17 @@ class PatientsController < ApplicationController
 
   def set_q
     @q = Patient.ransack(params[:q])
+  end
+
+  def patient_params
+    params.require(:patient).permit(:name, :warn, :phone_number, :medical_record_number, :maintenance_or_treatment, :visit_date)
+  end
+
+  def set_user
+    @user = current_user
+  end
+
+  def set_patient
+    @patient = Patient.find(params[:id])
   end
 end

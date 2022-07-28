@@ -2,17 +2,15 @@
 
 class HomeController < ApplicationController
   before_action :set_q
+  before_action :set_user
 
   def top
-    @user = current_user
   end
 
   def about
-    @user = current_user
   end
 
   def search
-    @user = current_user
     @results = @q.result.order(created_at: :desc).page(params[:page]).per(5)
   end
 
@@ -20,5 +18,9 @@ class HomeController < ApplicationController
 
   def set_q
     @q = Patient.ransack(params[:q])
+  end
+
+  def set_user
+    @user = current_user
   end
 end
