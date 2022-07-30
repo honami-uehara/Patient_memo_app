@@ -9,7 +9,7 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
-      - uses: kayac/ecspresso@v
+      - uses: kayac/ecspresso@v1
         with:
           version: v1.7.12
       - name: Configure AWS credentials
