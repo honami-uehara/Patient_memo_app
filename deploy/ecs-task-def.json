@@ -1,0 +1,40 @@
+{
+  "containerDefinitions": [
+    {
+      "command": [
+        "rails",
+        "server",
+        "-b",
+        "0.0.0.0"
+      ],
+      "cpu": 333,
+      "environment": [],
+      "essential": true,
+      "image": "055510766179.dkr.ecr.ap-northeast-1.amazonaws.com/patient-memo-app-image-rep:latest",
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "patient-memo-app-service",
+          "awslogs-region": "ap-northeast-1",
+          "awslogs-stream-prefix": "patient-memo-app"
+        }
+      },
+      "memoryReservation": 600,
+      "mountPoints": [],
+      "name": "rails-webapp",
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 0,
+          "protocol": "tcp"
+        }
+      ],
+      "volumesFrom": []
+    }
+  ],
+  "family": "patient-memo-app-service",
+  "networkMode": "bridge",
+  "placementConstraints": [],
+  "taskRoleArn": "arn:aws:iam::055510766179:role/ecs-task-role-for-patient-memo-app",
+  "volumes": []
+}
