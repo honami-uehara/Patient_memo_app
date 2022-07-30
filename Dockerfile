@@ -7,12 +7,13 @@ RUN apt-get update -qq \
     && apt-get install -y nodejs npm \
     && rm -rf /var/lib/apt/lists/* \
     && npm install --global yarn
-RUN bundle exec bin/webpack-dev-server
+
 
 # 作業ディレクトリの指定
 WORKDIR /patient-memo-app
 COPY Gemfile /patient-memo-app/Gemfile
 COPY Gemfile.lock /patient-memo-app/Gemfile.lock
 RUN bundle install
+RUN bundle exec bin/webpack-dev-server
 COPY . /patient-memo-app
 CMD ["rails", "server", "-b", "0.0.0.0"]
