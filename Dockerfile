@@ -7,6 +7,7 @@ RUN apt-get update -qq \
     && apt-get install -y nodejs npm \
     && rm -rf /var/lib/apt/lists/* \
     && npm install --global yarn
+RUN bundle exec bin/webpack-dev-server
 
 # 作業ディレクトリの指定
 WORKDIR /patient-memo-app
