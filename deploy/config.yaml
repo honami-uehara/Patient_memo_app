@@ -1,0 +1,6 @@
+region: ap-northeast-1
+cluster: ecs-cluster-patient-memo-app
+service: patient-memo-app-service
+service_definition: ecs-service-def.json
+task_definition: ecs-task-def.json
+timeout: 10m0s
