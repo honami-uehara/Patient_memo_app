@@ -14,6 +14,8 @@ WORKDIR /patient-memo-app
 COPY Gemfile /patient-memo-app/Gemfile
 COPY Gemfile.lock /patient-memo-app/Gemfile.lock
 RUN bundle install
-RUN rails webpacker:compile
 COPY . /patient-memo-app
+RUN rails webpacker:install
+RUN rails webpacker:compile
+RUN rails assets:precompile
 CMD ["rails", "server", "-b", "0.0.0.0"]
