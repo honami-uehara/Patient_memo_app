@@ -49,6 +49,7 @@ form {
   color: #e57a7c;
 }
 
+
 // 新規登録ページ
 
 .new_pass {
@@ -62,9 +63,14 @@ form {
 }
 
 .login-account {
-  font-size: 10px;
-  padding: 10px;
-  color: #e57a7c;
+  font-size: 12px;
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}
+
+.login-submit {
+  margin: 40px;
 }
 
 // ユーザーshow
