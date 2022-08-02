@@ -47,8 +47,8 @@ bookmark機能（予約時に注意が必要な患者をブックマークをし
 
 ## テスト用アカウント
 
-メールアドレス：test1@example.co.jp<br>
-パスワード：testuser1<br>
+メールアドレス：test@example.co.jp<br>
+パスワード：test１１１1<br>
 
 
 ## 　こだわったところ
