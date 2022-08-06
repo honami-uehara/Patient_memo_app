@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'users/index', to: 'users/registrations#index'
     get 'users/destroy', to: 'users/sessions#destroy'
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 
   get 'home/about'

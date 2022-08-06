@@ -16,4 +16,10 @@ class User < ApplicationRecord
   def already_bookmarkd?(patient)
     bookmarks.exists?(patient_id: patient.id)
   end
+
+  def self.guest
+    find_or_create_by!(email: 'guest@test.com', username: 'guest') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
 end
