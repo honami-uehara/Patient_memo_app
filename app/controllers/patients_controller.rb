@@ -7,7 +7,7 @@ class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
   def index
-    @patients = Patient.order(created_at: :desc).page(params[:page]).per(10)
+    @patients = Patient.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def new
@@ -50,7 +50,7 @@ class PatientsController < ApplicationController
   end
 
   def search
-    @results = @q.result.order(created_at: :desc).page(params[:page]).per(5)
+     @results= @q.result.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   private
