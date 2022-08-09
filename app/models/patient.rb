@@ -18,6 +18,8 @@ class Patient < ApplicationRecord
   validate :day_after_today, on: :create
 
   def day_after_today
-    errors.add(:visit_date, '今日を含む過去の日付を入力して下さい') if visit_date > Date.today
+    unless visit_date == nil
+      errors.add(:visit_date, '今日を含む過去の日付を入力して下さい') if visit_date > Date.today
+    end
   end
 end
