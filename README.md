@@ -1,24 +1,68 @@
-# README
+ゲストログイン作成しています。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション名
 
-Things you may want to cover:
+患者情報メモアプリ
 
-* Ruby version
+## アプリケーション概要
 
-* System dependencies
+患者情報メモアプリは歯科医院向けのカルテに記載する手書きのコメントをデジタル化し、<br>
+必要な時に瞬時に患者情報を検索でき、情報共有、カルテを探す手間を省くことをできることを目的としたアプリです。
 
-* Configuration
 
-* Database creation
+## なぜ作ったか
 
-* Database initialization
+私自身、現在歯科衛生士として勤務しています。<br>
+病院などは電子カルテなどデジタル化が進んでいますが、歯科医院は個人経営が多いため、アナログなところが多いです。<br>
+患者様から電話、来院予約があった際、カルテを探すのに時間がかかり待たせてしまったり、<br>
+情報共有するのに時間がかかってしまったり、<br>
+治療内容を一つ一つ手書きで書くのも大変でした。<br>
+そんな現状を変えたく、登録するだけで<br>
+パソコン一つで簡単にDr、歯科衛生士、歯科助手全ての業種が情報を共有でき、<br>
+カルテを探す時間を無くせる、仕事の効率化を目的としたこのアプリを考えました。
 
-* How to run the test suite
+## 開発環境
 
-* Services (job queues, cache servers, search engines, etc.)
+M1 mac<br>
+Ruby 3.0.3<br>
+Ruby on Rails 6.1.4<br>
+SQLite３<br>
+AWS<br>
+Rspec<br>
+Rubocop<br>
+docker
 
-* Deployment instructions
+## 機能
 
-* ...
+出来るだけシンプルにわかりやすく、必要最低限の機能をつけました。<br>
+
+ユーザー登録/ログイン機能（パスワードも変更できるよう実装）<br>
+検索機能<br>
+患者登録機能（編集/削除/詳細）<br>
+コメント機能/削除（追加でコメント残せるように実装）<br>
+bookmark機能（予約時に注意が必要な患者をブックマークをしておくことで一覧ですぐ確認できるように実装）<br>
+ページネーション機能
+
+## ER図
+<img width="743" alt="スクリーンショット 2022-07-11 15 43 06" src="https://user-images.githubusercontent.com/93603572/178287726-731d9c73-c1c7-484d-b228-3f0819905305.png">
+
+
+## 使い方
+
+<img width="1437" alt="スクリーンショット 2022-08-12 14 54 32" src="https://user-images.githubusercontent.com/93603572/184293381-306f0a3c-6b17-4355-86be-44b3331bbe62.png">
+　userの登録、名前アドレスパスワード変更、ログアウトがきます。<br>
+ ※ゲストログインの場合は編集ページにアクセスできません。
+ 
+ <img width="1440" alt="スクリーンショット 2022-08-12 15 00 56" src="https://user-images.githubusercontent.com/93603572/184293920-c12ec317-b577-42d7-b143-b47d64aa00a6.png">
+ホーム/患者ページ一覧で患者検索ができます。<br>
+患者番号/カルテ番号は完全一致、名前は曖昧検索で実装。
+
+<img width="1117" alt="スクリーンショット 2022-08-12 15 10 42" src="https://user-images.githubusercontent.com/93603572/184295064-8ceaef12-1c70-452f-af24-face7d010235.png">
+患者一覧ページから登録した患者の編集削除する事ができ、<br>
+詳細ページにアクセスすると、ブックマーク（要注意患者）、コメント追加削除できるように実装しています。
+
+<img width="943" alt="スクリーンショット 2022-08-12 15 15 17" src="https://user-images.githubusercontent.com/93603572/184295510-1cb4db4d-1d2f-429a-8ef9-c430d97684da.png">
+ブックマークした情報をホームの要注意患者一覧からすぐ確認できます。
+
+
+
