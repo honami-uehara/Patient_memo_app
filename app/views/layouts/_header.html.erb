@@ -1,7 +1,11 @@
 <header>
   <nav>
     <ul>
-      <% if user_signed_in? %>
+      <% if @user.email == 'guest@test.com' %>
+        <li><%= link_to "-about-", home_about_path %></li>
+        <li><%= link_to "myアカウント" , account_path %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      <% elsif user_signed_in? %>
         <li><%= link_to "-about-", home_about_path %></li>
         <li><%= link_to "myアカウント" , account_path %></li>
         <li><%= link_to "アカウント編集" , edit_account_path %></li>
@@ -13,4 +17,3 @@
     </ul>
   </nav>
 </header>
-

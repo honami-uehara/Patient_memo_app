@@ -1,4 +1,5 @@
 <%= form_with model: patient do |f| %>
+<%= render 'layouts/error_messages', model: f.object %>
   <div class="register">
     <div>
       <%= f.label :medical_record_number, "カルテ番号", class:"label_name" %><br>
@@ -22,7 +23,7 @@
 
     <div>
       <%= f.label :radio_button, "治療内容", class:"label_name" %><br />
-      <%= f.radio_button :maintenance_or_treatment, "メンテ中" %>メンテ中 or <%= f.radio_button :maintenance_or_treatment, "治療中" %>治療中
+      <%= f.radio_button :maintenance_or_treatment, "メンテ中"%>メンテ中 or <%= f.radio_button :maintenance_or_treatment, "治療中", checked: true %>治療中
     </div>
 
     <div>

@@ -3,11 +3,9 @@
 class AccountsController < ApplicationController
   before_action :set_user
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if (params[:user][:password] == params[:user][:password_confirmation]) &&
@@ -22,6 +20,7 @@ class AccountsController < ApplicationController
   def bookmarks
     bookmarks = Bookmark.where(user_id: @user.id).pluck(:patient_id)
     @bookmark_lists = Patient.find(bookmarks)
+    @patients = Patient.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   private

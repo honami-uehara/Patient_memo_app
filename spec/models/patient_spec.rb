@@ -61,7 +61,7 @@ RSpec.describe Patient, type: :model do
 
     it '来院日が今日より先の日付だと登録できないこと' do
       expect(patient_date.valid?).to eq(false)
-      expect(patient_date.errors.messages[:visit_date]).to include('今日を含む過去の日付を入力して下さい')
+      expect(patient_date.errors.messages[:base]).to include('今日を含む過去の日付を入力して下さい')
     end
   end
 end

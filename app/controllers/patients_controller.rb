@@ -4,10 +4,10 @@ class PatientsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_q
   before_action :set_user
-  before_action :set_patient, only: [:show, :edit, :update, :destroy]
+  before_action :set_patient, only: %i[show edit update destroy]
 
   def index
-    @patients = Patient.order(created_at: :desc).page(params[:page]).per(10)
+    @patients = Patient.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def new
@@ -31,8 +31,7 @@ class PatientsController < ApplicationController
     @additional_comment = AdditionalComment.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @patient.update(patient_params)
