@@ -4,7 +4,7 @@ class PatientsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_q
   before_action :set_user
-  before_action :set_patient, only: [:show, :edit, :update, :destroy]
+  before_action :set_patient, only: %i[show edit update destroy]
 
   def index
     @patients = Patient.order(created_at: :desc).page(params[:page]).per(5)
@@ -31,8 +31,7 @@ class PatientsController < ApplicationController
     @additional_comment = AdditionalComment.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @patient.update(patient_params)
@@ -50,7 +49,7 @@ class PatientsController < ApplicationController
   end
 
   def search
-     @results= @q.result.order(created_at: :desc).page(params[:page]).per(5)
+    @results = @q.result.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   private

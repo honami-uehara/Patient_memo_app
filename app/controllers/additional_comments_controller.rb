@@ -18,7 +18,7 @@ class AdditionalCommentsController < ApplicationController
   def destroy
     additional_comment = current_user.additional_comments.find(params[:id])
     if additional_comment.destroy
-      flash[:alert] ='コメント削除しました'
+      flash[:alert] = 'コメント削除しました'
       redirect_to [:patient, { id: params[:patient_id] }]
     else
       flash[:alert] = 'コメント削除失敗です'

@@ -4,11 +4,9 @@ class HomeController < ApplicationController
   before_action :set_q
   before_action :set_user
 
-  def top
-  end
+  def top; end
 
-  def about
-  end
+  def about; end
 
   def search
     @results = @q.result.order(created_at: :desc).page(params[:page]).per(5)
