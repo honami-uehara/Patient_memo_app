@@ -61,7 +61,7 @@ bookmark機能（予約時に注意が必要な患者をブックマークをし
 患者一覧ページから登録した患者の編集削除する事ができ、<br>
 詳細ページにアクセスすると、ブックマーク（要注意患者）、コメント追加削除できるように実装しています。
 
-<img width="943" alt="スクリーンショット 2022-08-12 15 15 17" src="https://user-images.githubusercontent.com/93603572/184295510-1cb4db4d-1d2f-429a-8ef9-c430d97684da.png">
+<img width="879" alt="スクリーンショット 2022-08-15 15 00 28" src="https://user-images.githubusercontent.com/93603572/184584180-8882ffb7-d14f-45be-9df1-830c7f9d4bb6.png">
 ブックマークした情報をホームの要注意患者一覧からすぐ確認できます。
 
 
