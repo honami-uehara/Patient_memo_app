@@ -16,7 +16,7 @@
     {
       "containerName": "rails-webapp",
       "containerPort": 3000,
-      "targetGroupArn": "arn:aws:elasticloadbalancing:ap-northeast-1:055510766179:targetgroup/rails-http/5ab693346bd61073"
+      "targetGroupArn": "arn:aws:elasticloadbalancing:ap-northeast-1:055510766179:targetgroup/rails-http/76d2186b09776ba3"
     }
   ],
   "placementConstraints": [],
