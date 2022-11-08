@@ -27,7 +27,7 @@ M1 mac<br>
 Ruby 3.0.3<br>
 Ruby on Rails 6.1.4<br>
 SQLite３<br>
-AWS<br>
+heroku<br>
 Rspec<br>
 Rubocop<br>
 docker
