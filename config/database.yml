@@ -50,6 +50,4 @@ test:
 #
 production:
   <<: *default
-  database: Patient_memo_app_production
-  username: Patient_memo_app
-  password: <%= ENV['PATIENT_MEMO_APP2_DATABASE_PASSWORD'] %>
+  url: <%= ENV['CLEARDB_DATABASE_URL'] %>
