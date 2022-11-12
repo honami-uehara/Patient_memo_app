@@ -1,19 +1,26 @@
 <header>
-  <nav>
-    <ul>
+  <div class="header">
+  <div class="header__inner">
+    <% if @current_user %>
+      <%= link_to "患者メモアプリ", root_path(@current_user) %>
+    <% else %>
+      <h1>患者メモアプリ</h1>
+    <% end %>
+    <div class="header__navgroup">
       <% if @user.email == 'guest@test.com' %>
-        <li><%= link_to "-about-", home_about_path %></li>
-        <li><%= link_to "myアカウント" , account_path %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <div class="header__navitem"><%= link_to "-about-", home_about_path %></div>
+        <div class="header__navitem"><%= link_to "myアカウント" , account_path %></div>
+        <div class="header__navitem"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
       <% elsif user_signed_in? %>
-        <li><%= link_to "-about-", home_about_path %></li>
-        <li><%= link_to "myアカウント" , account_path %></li>
-        <li><%= link_to "アカウント編集" , edit_account_path %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <div class="header__navitem"><%= link_to "-about-", home_about_path %></div>
+        <div class="header__navitem"><%= link_to "myアカウント" , account_path %></div>
+        <div class="header__navitem"><%= link_to "アカウント編集" , edit_account_path %></div>
+        <div class="header__navitem"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
       <% else %>
-        <li><%= link_to "ログイン", "/users/sign_in" %></li>
-        <li><%= link_to "新規登録", "/users/sign_up" %></li>
+        <div class="header__navitem"><%= link_to "ログイン", "/users/sign_in" %></div>
+        <div class="header__navitem"><%= link_to "新規登録", "/users/sign_up" %></div>
       <% end %>
-    </ul>
-  </nav>
+    </div>
+  </div>
+</div>
 </header>

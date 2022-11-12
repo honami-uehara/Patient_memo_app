@@ -1,34 +1,50 @@
-header {
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 80px;
   background: #FFCCCC;
-  display: flex; /* flexboxを作る */
-  align-items: center; /* 上下中央に揃える */
-  justify-content: flex-end; /* 右寄せ */
-  padding-left: 30px;
-  padding-right: 30px;
-  position: fixed;
-  top: 0;
-  box-sizing: border-box;
-}
-
-ul {
-  list-style: none;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
 }
 
-ul li a {
-  padding: 10px 15px;
-  color: #FFFFFF;
-  text-decoration: none;
-  font-weight: bold;
+.header__inner{
+  max-width: 1152px;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-ul li  a:hover {
+.header__logo{
+  flex: none;
+  width: auto;
+  height: 35px;
+}
+
+.header__navgroup{
+  margin-left: auto;
+  display: flex;
+  flex: none;
+}
+
+.header__navgroup > * + *{
+  margin-left: 30px;
+}
+
+.header__navitem{
+  text-align: center;
+  color: #8c8c8c;
+}
+
+.header__navgroup  a:hover {
   opacity: 0.5;
   cursor: pointer;
 }
 
-
-
+.header__inner a {
+  color: #FFFFFF;
+}
