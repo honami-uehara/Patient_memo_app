@@ -124,7 +124,7 @@ RSpec.describe 'Patients', type: :request do
         sign_in user
       end
 
-      let!(:patient2) { create(:patient) }
+      let!(:patient2) { create(:patient, user: user) }
 
       it '削除されること' do
         expect do
@@ -148,7 +148,7 @@ RSpec.describe 'Patients', type: :request do
     end
 
     let!(:params) { { patient: attributes_for(:patient, name: 'test1') } }
-    let!(:patient) { create(:patient) }
+    let!(:patient) { create(:patient, user: user) }
 
     it 'リクエストが成功する' do
       post patients_path, params: params

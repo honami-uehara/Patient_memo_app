@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Bookmarks', type: :request do
   let(:user) { create(:user) }
-  let(:patient_record) { create(:patient) }
+  let(:patient_record) { create(:patient, user: user) }
 
   before do
     sign_in user

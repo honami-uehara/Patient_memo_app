@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe AdditionalComment, type: :model do
   let(:user) { create(:user) }
-  let(:patient) { create(:patient) }
+  let(:patient) { create(:patient, user: user) }
   let(:additional_comment) do
     build(:additional_comment, user_id: user.id, patient_id: patient.id)
   end

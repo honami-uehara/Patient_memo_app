@@ -3,18 +3,14 @@
 require 'rails_helper'
 
 RSpec.describe Patient, type: :model do
-  let(:patient) { create(:patient) }
+  let(:patient) { create(:patient, user: user) }
   let!(:user) { create(:user) }
 
   describe 'バリデーション' do
     context '登録する' do
       it '全ての項目の入力されている' do
-        expect(create(:patient).valid?).to eq(true)
+        expect(patient.valid?).to eq(true)
       end
-    end
-
-    it '名前が１０文字以下' do
-      expect(patient.valid?).to eq(true)
     end
   end
 
