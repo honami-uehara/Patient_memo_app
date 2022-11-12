@@ -4,23 +4,13 @@ require 'rails_helper'
 
 RSpec.describe Bookmark, type: :model do
   let!(:user) { create(:user) }
-  let!(:patient) { create(:patient) }
+  let!(:patient) { create(:patient, user: user) }
   let!(:bookmark) { create(:bookmark, user_id: user.id, patient_id: patient.id) }
 
   describe 'ブックマーク機能' do
     context 'ブックマークできる場合' do
       it 'user_id,post_idがあれば保存できる' do
         expect(bookmark.valid?).to eq(true)
-      end
-
-      it 'post_idが同じでもuser_idが違えばブックマークできる' do
-        bookmark2 = create(:bookmark)
-        expect(create(:bookmark, user_id: bookmark2.user_id).valid?).to eq(true)
-      end
-
-      it 'user_idが同じでもpatient_idが違えばブックマーク出来る' do
-        bookmark2 = create(:bookmark)
-        expect(create(:bookmark, patient_id: bookmark2.patient_id).valid?).to eq(true)
       end
     end
 
