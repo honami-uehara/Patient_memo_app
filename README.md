@@ -30,7 +30,6 @@ MySQL<br>
 heroku<br>
 Rspec<br>
 Rubocop<br>
-docker
 
 ## 機能
 
